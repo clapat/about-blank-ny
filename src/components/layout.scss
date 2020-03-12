@@ -654,8 +654,8 @@ pre tt:after {
   margin: 20px auto 0 100px;
   display: grid;
   grid-gap: 20px;
-  grid-template-columns: 5fr auto;
-  grid-template-areas: "header . " "innhold sidebar" "footer footer"; 
+  grid-template-columns: 60% auto;
+  grid-template-areas: "header . " "innhold sidebar" "footer footer";
 }
 
 @media (max-width: 1024px) {
@@ -667,7 +667,7 @@ pre tt:after {
 
 @media (max-width: 700px) {
   .container {
-    margin: 0 auto 0 20px;
+    margin: 0 20px;
     grid-template-columns: 1fr;
     grid-template-areas: "header" "innhold" "footer";
   }
@@ -675,25 +675,20 @@ pre tt:after {
 
 .content {
   grid-area: innhold;
+  width: auto;
+  max-width: 690px;
 }
 
 @media (max-width: 700px) {
   .content {
     grid-area: innhold;
     width: 100%;
-    max-width: 390px;
     }
 }
 
 .header {
   grid-area: header;
   max-width: 690px;
-}
-
-@media (max-width: 700px) {
-  .header {
-    max-width: 340px;
-    }
 }
 
 .sidebar{
@@ -703,6 +698,7 @@ pre tt:after {
   height: auto;
   z-index: 4000;
   margin-right: 10px;
+  max-width: 300px;
 }
 
 @media (max-width: 700px) {
@@ -714,6 +710,8 @@ pre tt:after {
         background: #fff;
         z-index: 2000;
         padding: 70px;
+        margin-right: 0px;
+        max-width: 100%;
     }
 }
 
@@ -789,10 +787,11 @@ pre tt:after {
 
 .title {
   color: $blank-yellow;
-  font-size: 12rem;
+  font-size: 12em;
   font-family: "Sang Bleu Empire";
   font-weight: 800;
   text-decoration: none;
+  white-space: nowrap;
 }
 
 @media (max-width: 700px) {
